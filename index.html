@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio DWI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Laboratorio DWI</h1>
+        <p class="subtitle">Herramientas de práctica</p>
+    </header>
+
+    <main class="container">
+        <section class="app-section" id="app-age">
+            <h2>Calculadora de edad</h2>
+            <p>Ingresa tu fecha de nacimiento.</p>
+            <div class="custom-date-picker">
+                <input type="number" id="age-day" placeholder="DD" min="1" max="31" aria-label="Día">
+                <span>/</span>
+                <input type="number" id="age-month" placeholder="MM" min="1" max="12" aria-label="Mes">
+                <span>/</span>
+                <input type="number" id="age-year" placeholder="AAAA" min="1900" aria-label="Año">
+            </div>
+            <button type="button" id="btn-age">Calcular edad</button>
+            <div id="age-result" class="result" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="app-section" id="app-temp">
+            <h2>Convertidor de temperatura</h2>
+            <p>Escribe una temperatura y elige las unidades de origen y destino.</p>
+            <div class="temp-form">
+                <input type="number" id="temp-value" placeholder="Temperatura" step="any" aria-label="Temperatura">
+                <select id="temp-from" aria-label="Unidad de origen">
+                    <option value="">Unidad inicial</option>
+                    <option value="C">Celsius</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="K">Kelvin</option>
+                </select>
+                <select id="temp-to" aria-label="Unidad de destino">
+                    <option value="">Unidad final</option>
+                    <option value="C">Celsius</option>
+                    <option value="F">Fahrenheit</option>
+                    <option value="K">Kelvin</option>
+                </select>
+            </div>
+            <button type="button" id="btn-convert" disabled>Convertir temperatura</button>
+            <div id="temp-result" class="result" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="app-section" id="app-tasks">
+            <h2>Lista de tareas</h2>
+            <p>Agrega tareas, marca las que termines o elimínalas.</p>
+            <div class="task-input-container">
+                <input type="text" id="new-task" placeholder="Escribe una tarea..." aria-label="Nueva tarea" maxlength="200">
+                <button type="button" id="btn-add-task" aria-label="Agregar tarea">Agregar</button>
+            </div>
+            <ul id="task-list"></ul>
+            <p id="task-empty" class="empty-message">Todavía no hay tareas. ¡Agrega la primera!</p>
+        </section>
+    </main>
+</body>
+</html>
